@@ -30,6 +30,14 @@ public class ProcessFile {
 
     System.out.println(headers);
     System.out.println(rows);
+
+    for (List<String> row : rows) {
+      System.out.println("---------------------------");
+      for (int x = 0; x < headers.size(); x++) {
+        System.out.println(headers.get(x) + ":" + row.get(x));
+      }
+    }
+    
     input.close();
   }
   
