@@ -1,10 +1,17 @@
 package org.projects.workshop.testing;
 
 import java.io.File;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 public class ProcessFile {
 
@@ -22,23 +29,61 @@ public class ProcessFile {
     } else {
       System.out.println("no first line!");
     }
-    
-    while(input.hasNext()) {
-        String[] line = input.next().split("\t");
-        rows.add(Arrays.asList(line));
+
+    while (input.hasNext()) {
+      String[] line = input.next().split("\t");
+      rows.add(Arrays.asList(line));
     }
+    input.close();
 
     System.out.println(headers);
     System.out.println(rows);
 
+    StringJoiner joiner = new StringJoiner("\n");
     for (List<String> row : rows) {
-      System.out.println("---------------------------");
+      joiner.add("---------------------------");
       for (int x = 0; x < headers.size(); x++) {
-        System.out.println(headers.get(x) + ":" + row.get(x));
+        String rowToJoin = String.format("%s:%s", headers.get(x), row.get(x));
+        joiner.add(rowToJoin);
       }
     }
+    System.out.println(joiner.toString());
     
-    input.close();
+
+    DecimalFormatSymbols symbols = new DecimalFormatSymbols();
+    symbols.setGroupingSeparator(',');
+    symbols.setDecimalSeparator('.');
+    String pattern = "#,##0.0#";
+    DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
+    decimalFormat.setParseBigDecimal(true);
+    Map<String, BigDecimal> marketCapByRegion = new HashMap<>();
+    for (List<String> row : rows) {
+      String region = row.get(5);
+      String marketCapText = row.get(8);
+      BigDecimal marketCap = BigDecimal.ZERO;
+      try {
+        marketCap = (BigDecimal) decimalFormat.parse(marketCapText);
+      } catch (ParseException e) {
+        System.out.println("not a number!");
+      }
+      if (marketCapByRegion.containsKey(region)) {
+        BigDecimal currentMarketCap = marketCapByRegion.get(region);
+        BigDecimal newMarketCap = currentMarketCap.add(marketCap);
+        marketCapByRegion.put(region, newMarketCap);
+      } else {
+        marketCapByRegion.put(region, marketCap);
+      }
+    }
+
+    
+    joiner = new StringJoiner("\n");
+    joiner.add("---------------------------");
+    for (String region : marketCapByRegion.keySet()) {
+      String rowToJoin = String.format("%1$20s : £%2$10.2fm", region, marketCapByRegion.get(region));
+      joiner.add(rowToJoin);
+    }
+    System.out.println(joiner.toString());
+
   }
-  
+
 }
