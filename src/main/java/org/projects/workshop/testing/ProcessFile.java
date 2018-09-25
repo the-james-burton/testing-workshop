@@ -48,7 +48,6 @@ public class ProcessFile {
       }
     }
     System.out.println(joiner.toString());
-    
 
     DecimalFormatSymbols symbols = new DecimalFormatSymbols();
     symbols.setGroupingSeparator(',');
@@ -60,21 +59,14 @@ public class ProcessFile {
     for (List<String> row : rows) {
       String region = row.get(5);
       String marketCapText = row.get(8);
-      BigDecimal marketCap = BigDecimal.ZERO;
       try {
-        marketCap = (BigDecimal) decimalFormat.parse(marketCapText);
+        BigDecimal marketCap = (BigDecimal) decimalFormat.parse(marketCapText);
+        marketCapByRegion.computeIfPresent(region, (key, value) -> value.add(marketCap));
+        marketCapByRegion.computeIfAbsent(region, key -> marketCap);
       } catch (ParseException e) {
         System.out.println("not a number!");
       }
-      if (marketCapByRegion.containsKey(region)) {
-        BigDecimal currentMarketCap = marketCapByRegion.get(region);
-        BigDecimal newMarketCap = currentMarketCap.add(marketCap);
-        marketCapByRegion.put(region, newMarketCap);
-      } else {
-        marketCapByRegion.put(region, marketCap);
-      }
     }
-
     
     joiner = new StringJoiner("\n");
     joiner.add("---------------------------");
