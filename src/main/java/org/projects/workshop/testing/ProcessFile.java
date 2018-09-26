@@ -59,10 +59,10 @@ public class ProcessFile {
     for (List<String> row : rows) {
       String region = row.get(5);
       String marketCapText = row.get(8);
+      marketCapByRegion.computeIfAbsent(region, key -> BigDecimal.ZERO);
       try {
         BigDecimal marketCap = (BigDecimal) decimalFormat.parse(marketCapText);
-        marketCapByRegion.computeIfPresent(region, (key, value) -> value.add(marketCap));
-        marketCapByRegion.computeIfAbsent(region, key -> marketCap);
+        marketCapByRegion.compute(region, (key, value) -> value.add(marketCap));
       } catch (ParseException e) {
         System.out.println("not a number!");
       }
