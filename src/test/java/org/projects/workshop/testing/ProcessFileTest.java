@@ -6,5 +6,6 @@ public class ProcessFileTest {
 
     @Test
     public void mainShouldRunWithoutError() {
+      ProcessFile.main("");
     }
 }
