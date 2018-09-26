@@ -8,4 +8,4 @@ There is a main method in `ProcessFile.java` that reads the contents of a file a
 
 ## Your Mission
 
-Write a very simple test that just executes the method by calling the main method with no arguments. Observe that the test runs when built on the command line with `mvn test` and that a coverage report is generated. 
+Create a new branch for your changes. In it, implement very simple test in `ProcessFileTest.java` that just executes the method by calling the main method with no arguments. Observe that the test runs when built on the command line with `mvn test` and that a coverage report is generated. 
