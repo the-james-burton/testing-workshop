@@ -8,4 +8,4 @@ You should now have a working CI build that shows coverage on your method. Howev
 
 ## Your Mission
 
-To proceed, we need to improve the code to allow us to pass in a file as an argument. We can then test with several different files and increase the test coverage. Go ahead and make the changes.
+To proceed, we need to improve the code to allow us to pass in a file as an argument. We can then test with several different files and increase the test coverage. Go ahead and make the changes to improve the test coverage. You can copy the input file `lse-companies.tsv` into `src\test\resources` directory and duplicate as needed to improve the coverage.
