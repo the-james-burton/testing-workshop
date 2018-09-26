@@ -1,11 +1,11 @@
-# testing-workshop chapter2 [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter2)](https://travis-ci.org/the-james-burton/testing-workshop)
+# testing-workshop chapter3 [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter3)](https://travis-ci.org/the-james-burton/testing-workshop)
 
 *DRAFT*
 
 ## The Situation
 
-So you now have a working test that runs locally. However, we don't know yet if this will work in our CI system. We need to find out.
+You should now have a working CI build that shows coverage on your method. However, you will see that there is some untested code. We need to get this code tested.
 
 ## Your Mission
 
-Commit your changes into your branch. Make a PR into your master branch to merge your changes in. Watch as the CI system attempts to build both your branch and your PR. What happened? Make any necessary changes to ensure that your test works in our CI system.
+To proceed, we need to improve the code to allow us to pass in a file as an argument. We can then test with several different files and increase the test coverage. Go ahead and make the changes.
