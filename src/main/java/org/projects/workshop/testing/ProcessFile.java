@@ -34,7 +34,10 @@ public class ProcessFile {
       String[] firstLine = input.next().split("\t");
       headers.addAll(Arrays.asList(firstLine));
     } else {
-      System.out.println("no first line!");
+      input.close();
+      String message = "no first line!";
+      System.out.println(message);
+      throw new RuntimeException(message);
     }
 
     while (input.hasNext()) {
