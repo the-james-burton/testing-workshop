@@ -1,6 +1,7 @@
 package org.projects.workshop.testing;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
@@ -15,9 +16,15 @@ import java.util.StringJoiner;
 
 public class ProcessFile {
 
-  public static void main(final String... args) throws Exception {
+  public static void main(final String... args) {
     File file = new File("/home/jimsey/Development/projects/testing-workshop/src/main/resources/lse-companies.tsv");
-    Scanner input = new Scanner(file);
+    Scanner input = null;
+    try {
+      input = new Scanner(file);
+    } catch (FileNotFoundException e) {
+      System.out.println("unable to create scanner!");
+      throw new RuntimeException(e);
+    }
     input.useDelimiter("\n");
 
     List<String> headers = new ArrayList<>();
