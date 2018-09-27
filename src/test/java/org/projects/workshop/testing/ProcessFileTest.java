@@ -4,8 +4,8 @@ import org.junit.Test;
 
 public class ProcessFileTest {
 
-    @Test
-    public void mainShouldRunWithoutError() {
-      ProcessFile.main("");
-    }
+  @Test
+  public void mainShouldRunWithoutError() {
+    ProcessFile.main("");
+  }
 }
