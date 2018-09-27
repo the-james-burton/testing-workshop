@@ -17,7 +17,7 @@ import java.util.StringJoiner;
 public class ProcessFile {
 
   public static void main(final String... args) {
-    File file = new File("src/main/resources/lse-companies.tsv");
+    File file = new File(args[0]);
     Scanner input = null;
     try {
       input = new Scanner(file);
