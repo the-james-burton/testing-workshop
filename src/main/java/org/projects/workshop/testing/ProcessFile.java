@@ -14,10 +14,15 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.StringJoiner;
 
-public class ProcessFile {
+public class ProcessFile implements Runnable {
 
-  public static void main(final String... args) {
-    File file = new File(args[0]);
+  private String filename;
+
+  public ProcessFile() {
+  }
+
+  public void run() {
+    File file = new File(filename);
     Scanner input = null;
     try {
       input = new Scanner(file);
@@ -77,7 +82,7 @@ public class ProcessFile {
         System.out.println("not a number!");
       }
     }
-    
+
     joiner = new StringJoiner("\n");
     joiner.add("---------------------------");
     for (String region : marketCapByRegion.keySet()) {
@@ -86,6 +91,14 @@ public class ProcessFile {
     }
     System.out.println(joiner.toString());
 
+  }
+
+  public String getFilename() {
+    return filename;
+  }
+
+  public void setFilename(String filename) {
+    this.filename = filename;
   }
 
 }
