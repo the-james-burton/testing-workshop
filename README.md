@@ -4,8 +4,8 @@
 
 ## The Situation
 
-You should now have a working CI build that shows coverage on your method. However, you will see that there is some untested code. We need to get this code tested.
+Ok, so we are making progress. Coverage has improved. However, we are still testing a main method. We are therefore effectively doing a full application test on a very small system. This isn't scalable and doesn't allow us to test individual components.
 
 ## Your Mission
 
-To proceed, we need to improve the code to allow us to pass in a file as an argument. We can then test with several different files and increase the test coverage. Go ahead and make the changes to improve the test coverage. You can copy the input file `lse-companies.tsv` into `src\test\resources` directory and duplicate as needed to improve the coverage.
+We need to start the refactoring process. You goal is to take the code out of the main method and put it in its own class that implements `Runnable`. Your main method will then need to create an instance of that class and call the run() method on it. You tests will need to be changed to do the same.
