@@ -14,4 +14,10 @@ A series of exercises to illustrate testing. This workshop will take you on a jo
  chapter2 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter2)](https://travis-ci.org/the-james-burton/testing-workshop)
  chapter3 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter3)](https://travis-ci.org/the-james-burton/testing-workshop)
  chapter4 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter4)](https://travis-ci.org/the-james-burton/testing-workshop)
+ chapter5 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter5)](https://travis-ci.org/the-james-burton/testing-workshop)
+ chapter6 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter6)](https://travis-ci.org/the-james-burton/testing-workshop)
+ chapter7 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter7)](https://travis-ci.org/the-james-burton/testing-workshop)
+ chapter8 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter8)](https://travis-ci.org/the-james-burton/testing-workshop)
+ chapter9 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter9)](https://travis-ci.org/the-james-burton/testing-workshop)
+ chapter10 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter10)](https://travis-ci.org/the-james-burton/testing-workshop)
 
