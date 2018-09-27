@@ -1,4 +1,4 @@
-# testing-workshop chapter3 [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter3)](https://travis-ci.org/the-james-burton/testing-workshop)
+# testing-workshop chapter4 [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter4)](https://travis-ci.org/the-james-burton/testing-workshop)
 
 *DRAFT*
 
