@@ -77,7 +77,7 @@ public class ProcessFile {
         System.out.println("not a number!");
       }
     }
-    
+
     joiner = new StringJoiner("\n");
     joiner.add("---------------------------");
     for (String region : marketCapByRegion.keySet()) {

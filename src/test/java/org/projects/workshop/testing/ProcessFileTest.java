@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class ProcessFileTest {
 
-    @Test
-    public void mainShouldRunWithoutError() {
-    }
+  @Test
+  public void mainShouldRunWithoutError() {
+  }
 }
