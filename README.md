@@ -1,11 +1,11 @@
-# testing-workshop chapter6 [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter6)](https://travis-ci.org/the-james-burton/testing-workshop)
+# testing-workshop chapter7 [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter7)](https://travis-ci.org/the-james-burton/testing-workshop)
 
 *DRAFT*
 
 ## The Situation
 
-Good. We have started to extract some logic from the big method into a smaller unit. We still only have an application test. 
+You have written your first genuine unit test that tests some isolated functionality and makes assertions. This is great progress but the report generation is still in one big method and we're not testing it very well as there are no assertions.
 
 ## Your Mission
 
-Write some unit tests for your new file parser! Start by making a new test class named the same but with `Test` on the end as this is best practice. Put it in a package with the same name in `src\test\resources`. You unit tests can use the same test files that you created earlier. When the test receives back a `ParsedFile` object, make some assertions on it using the `assertTrue` method in junit.
+Refactor the code in the `ProcessFile` class run method to pull out the two reports into their own classes. Since they both require a `ParsedFile` object and produce a string, you should your new classes implement a new interface called `Report` that specifies a single method `generateReport` which takes a `ParsedFile` as parameter and returns a string which is the report it creates.
