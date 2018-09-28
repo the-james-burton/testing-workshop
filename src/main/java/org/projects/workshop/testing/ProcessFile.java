@@ -1,18 +1,15 @@
 package org.projects.workshop.testing;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 import java.util.StringJoiner;
+
+import org.projects.workshop.testing.model.ParsedFile;
 
 public class ProcessFile implements Runnable {
 
@@ -22,43 +19,14 @@ public class ProcessFile implements Runnable {
   }
 
   public void run() {
-    File file = new File(filename);
-    Scanner input = null;
-    try {
-      input = new Scanner(file);
-    } catch (FileNotFoundException e) {
-      System.out.println("unable to create scanner!");
-      throw new RuntimeException(e);
-    }
-    input.useDelimiter("\n");
-
-    List<String> headers = new ArrayList<>();
-    List<List<String>> rows = new ArrayList<>();
-
-    if (input.hasNext()) {
-      String[] firstLine = input.next().split("\t");
-      headers.addAll(Arrays.asList(firstLine));
-    } else {
-      input.close();
-      String message = "no first line!";
-      System.out.println(message);
-      throw new RuntimeException(message);
-    }
-
-    while (input.hasNext()) {
-      String[] line = input.next().split("\t");
-      rows.add(Arrays.asList(line));
-    }
-    input.close();
-
-    System.out.println(headers);
-    System.out.println(rows);
+    FileParser fileParser = new FileParser();
+    ParsedFile parsedFile = fileParser.parseFile(filename);
 
     StringJoiner joiner = new StringJoiner("\n");
-    for (List<String> row : rows) {
+    for (List<String> row : parsedFile.getRows()) {
       joiner.add("---------------------------");
-      for (int x = 0; x < headers.size(); x++) {
-        String rowToJoin = String.format("%s:%s", headers.get(x), row.get(x));
+      for (int x = 0; x < parsedFile.getHeaders().size(); x++) {
+        String rowToJoin = String.format("%s:%s", parsedFile.getHeaders().get(x), row.get(x));
         joiner.add(rowToJoin);
       }
     }
@@ -71,7 +39,7 @@ public class ProcessFile implements Runnable {
     DecimalFormat decimalFormat = new DecimalFormat(pattern, symbols);
     decimalFormat.setParseBigDecimal(true);
     Map<String, BigDecimal> marketCapByRegion = new HashMap<>();
-    for (List<String> row : rows) {
+    for (List<String> row : parsedFile.getRows()) {
       String region = row.get(5);
       String marketCapText = row.get(8);
       marketCapByRegion.computeIfAbsent(region, key -> BigDecimal.ZERO);
