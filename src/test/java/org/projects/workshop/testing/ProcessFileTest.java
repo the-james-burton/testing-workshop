@@ -4,6 +4,8 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
+import org.projects.workshop.testing.reports.LongReport;
+import org.projects.workshop.testing.reports.MarketCapSummaryReport;
 
 public class ProcessFileTest {
 
@@ -15,6 +17,9 @@ public class ProcessFileTest {
   @Before
   public void setUp() {
     processFile = new ProcessFile();
+    processFile.setFileParser(new FileParser());
+    processFile.setReportGenerator1(new LongReport());
+    processFile.setReportGenerator2(new MarketCapSummaryReport());
   }
 
   @Test
