@@ -25,10 +25,6 @@ public class ProcessFile implements Runnable {
     System.out.println(marketCapSummaryReport);
   }
 
-  public String getFilename() {
-    return filename;
-  }
-
   public void setFilename(String filename) {
     this.filename = filename;
   }
