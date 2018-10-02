@@ -61,10 +61,6 @@ public class ProcessFile implements Runnable {
 
   }
 
-  public String getFilename() {
-    return filename;
-  }
-
   public void setFilename(String filename) {
     this.filename = filename;
   }
