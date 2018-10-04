@@ -11,7 +11,7 @@ public class ApplicationMain {
     processFile.setReportGenerator1(new LongReport());
     processFile.setReportGenerator2(new MarketCapSummaryReport());
     processFile.setFilename("src/main/resources/lse-companies.tsv");
-    processFile.run();
+    processFile.process();
   }
 
 }

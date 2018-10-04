@@ -1,9 +1,11 @@
 package org.projects.workshop.testing;
 
+import java.util.StringJoiner;
+
 import org.projects.workshop.testing.model.ParsedFile;
 import org.projects.workshop.testing.reports.Report;
 
-public class ProcessFile implements Runnable {
+public class ProcessFile {
 
   private String filename;
 
@@ -16,14 +18,17 @@ public class ProcessFile implements Runnable {
   public ProcessFile() {
   }
 
-  public void run() {
+  public String process() {
     ParsedFile parsedFile = fileParser.parseFile(filename);
+    StringJoiner joiner = new StringJoiner("\n");
 
     String report1 = reportGenerator1.generateReport(parsedFile);
-    System.out.println(report1);
+    joiner.add(report1);
 
     String report2 = reportGenerator2.generateReport(parsedFile);
-    System.out.println(report2);
+    joiner.add(report2);
+
+    return joiner.toString();
   }
 
   public void setFilename(String filename) {
