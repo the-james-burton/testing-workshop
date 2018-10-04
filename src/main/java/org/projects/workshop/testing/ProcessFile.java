@@ -30,7 +30,6 @@ public class ProcessFile {
         joiner.add(rowToJoin);
       }
     }
-    System.out.println(joiner.toString());
 
     DecimalFormatSymbols symbols = new DecimalFormatSymbols();
     symbols.setGroupingSeparator(',');
@@ -51,7 +50,6 @@ public class ProcessFile {
       }
     }
 
-    joiner = new StringJoiner("\n");
     joiner.add("---------------------------");
     for (String region : marketCapByRegion.keySet()) {
       String rowToJoin = String.format("%1$20s : £%2$10.2fm", region, marketCapByRegion.get(region));
