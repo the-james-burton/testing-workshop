@@ -8,4 +8,4 @@ So now the `ApplicationMain` class creates the parser and report generators and 
 
 ## Your Mission
 
-We are now in a position to control the execution context of the `ProcessFile` class. We do not have to give it the same implementation as used by the `ApplicationMain`. We are able to 'mock' the inputs to test only the specific behaviour of the code we really want to test, without depending on anything else. Change your `ProcessFileTest` class to provide a mock parser and mock report generators and assert only on the behaviour of the logic in `ProcessFile`.
+We are now in a position to control the execution context of the `ProcessFile` class. We do not have to give it the same implementation as used by the `ApplicationMain`. We are able to 'mock' the injected dependencies to test only the specific behaviour of the code we really want to test, without depending on anything else. Using [mockito](https://site.mockito.org/), change your `ProcessFileTest` class to provide mock report generators instead of the real things. Make them return a simple stirng instead of actually doing any processing. You should use mockito when() and thenReturn() methods to achieve this. 
