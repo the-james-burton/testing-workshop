@@ -14,14 +14,14 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.StringJoiner;
 
-public class ProcessFile implements Runnable {
+public class ProcessFile {
 
   private String filename;
 
   public ProcessFile() {
   }
 
-  public void run() {
+  public String process() {
     File file = new File(filename);
     Scanner input = null;
     try {
@@ -89,8 +89,8 @@ public class ProcessFile implements Runnable {
       String rowToJoin = String.format("%1$20s : £%2$10.2fm", region, marketCapByRegion.get(region));
       joiner.add(rowToJoin);
     }
-    System.out.println(joiner.toString());
 
+    return joiner.toString();
   }
 
   public void setFilename(String filename) {

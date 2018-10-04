@@ -4,7 +4,7 @@
 
 ## The Situation
 
-At last your application is starting to look better. The `ApplicationMain` class creates an instance of `ProcessFile`, configures it and runs it. Your unit tests do exactly the same. However, the run method in `ProcessFile` is still too big and does too many things.
+At last your application is starting to look better. The `ApplicationMain` class creates an instance of `ProcessFile`, configures it, runs it and handles the result. Your unit tests do exactly the same. However, the run method in `ProcessFile` is still too big and does too many things.
 
 ## Your Mission
 
