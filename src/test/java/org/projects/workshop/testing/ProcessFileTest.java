@@ -4,8 +4,9 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-import org.projects.workshop.testing.reports.LongReport;
-import org.projects.workshop.testing.reports.MarketCapSummaryReport;
+import org.mockito.Mockito;
+import org.projects.workshop.testing.model.ParsedFile;
+import org.projects.workshop.testing.reports.Report;
 
 public class ProcessFileTest {
 
@@ -16,10 +17,18 @@ public class ProcessFileTest {
 
   @Before
   public void setUp() {
+    Report mockLongReport = Mockito.mock(Report.class);
+    Report mockMarketCapSummaryReport = Mockito.mock(Report.class);
+
+    Mockito.when(mockLongReport.generateReport(Mockito.any(ParsedFile.class)))
+        .thenReturn("longReportOutput");
+    Mockito.when(mockMarketCapSummaryReport.generateReport(Mockito.any(ParsedFile.class)))
+        .thenReturn("marketCapSummaryReportOutput");
+
     processFile = new ProcessFile();
     processFile.setFileParser(new FileParser());
-    processFile.setReportGenerator1(new LongReport());
-    processFile.setReportGenerator2(new MarketCapSummaryReport());
+    processFile.setReportGenerator1(mockLongReport);
+    processFile.setReportGenerator2(mockMarketCapSummaryReport);
   }
 
   @Test
