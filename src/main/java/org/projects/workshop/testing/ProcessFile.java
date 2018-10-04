@@ -11,14 +11,14 @@ import java.util.StringJoiner;
 
 import org.projects.workshop.testing.model.ParsedFile;
 
-public class ProcessFile implements Runnable {
+public class ProcessFile {
 
   private String filename;
 
   public ProcessFile() {
   }
 
-  public void run() {
+  public String process() {
     FileParser fileParser = new FileParser();
     ParsedFile parsedFile = fileParser.parseFile(filename);
 
@@ -57,8 +57,8 @@ public class ProcessFile implements Runnable {
       String rowToJoin = String.format("%1$20s : £%2$10.2fm", region, marketCapByRegion.get(region));
       joiner.add(rowToJoin);
     }
-    System.out.println(joiner.toString());
 
+    return joiner.toString();
   }
 
   public void setFilename(String filename) {
