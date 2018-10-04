@@ -8,4 +8,4 @@ Ok, so we are making progress. Coverage has improved. However, we are still test
 
 ## Your Mission
 
-We need to start the refactoring process. You goal is to take the code out of the main method and put it in its own class that implements `Runnable`. Your main method will then need to create an instance of that class and call the run() method on it. You tests will need to be changed to do the same.
+We need to start the refactoring process. You goal is to take the code out of the main method and put it in its own class with a method that returns a string. Your main method will then need to create an instance of that class and call your new method on it. You tests will need to be changed to do the same. In addition, your main method should print the string out that you return.
