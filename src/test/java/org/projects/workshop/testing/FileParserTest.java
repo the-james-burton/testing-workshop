@@ -52,12 +52,12 @@ public class FileParserTest {
   public void runShouldThrowExceptionIfEmptyFile() {
     thrown.expect(RuntimeException.class);
     thrown.expectMessage("no first line!");
-    ParsedFile parsedFile = fileParser.parseFile("src/test/resources/lse-companies-empty-file.tsv");
+    fileParser.parseFile("src/test/resources/lse-companies-empty-file.tsv");
   }
 
   @Test(expected = RuntimeException.class)
   public void runShouldThrowExceptionIfNoFile() {
-    ParsedFile parsedFile = fileParser.parseFile("no-file");
+    fileParser.parseFile("no-file");
   }
 
 }
