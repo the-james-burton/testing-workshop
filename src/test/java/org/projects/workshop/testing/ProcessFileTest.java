@@ -53,6 +53,7 @@ public class ProcessFileTest {
     processFile.setFilename("anything");
     String result = processFile.process();
     verify(mockLongReport).generateReport(parsedFile);
+    verify(mockMarketCapSummaryReport).generateReport(parsedFile);
     assertTrue(result.contains(MOCK_LONG_REPORT_OUTPUT));
     assertTrue(result.contains(MOCK_MARKET_CAP_SUMMARY_REPORT_OUTPUT));
   }
