@@ -1,5 +1,6 @@
 package org.projects.workshop.testing;
 
+import static org.junit.Assert.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
@@ -13,6 +14,10 @@ import org.projects.workshop.testing.model.ParsedFile;
 import org.projects.workshop.testing.reports.Report;
 
 public class ProcessFileTest {
+
+  private static final String MOCK_MARKET_CAP_SUMMARY_REPORT_OUTPUT = "marketCapSummaryReportOutput";
+
+  private static final String MOCK_LONG_REPORT_OUTPUT = "longReportOutput";
 
   @Rule
   public ExpectedException thrown = ExpectedException.none();
@@ -38,22 +43,23 @@ public class ProcessFileTest {
     when(mockFileParser.parseFile(anyString()))
         .thenReturn(parsedFile);
     when(mockLongReport.generateReport(any(ParsedFile.class)))
-        .thenReturn("longReportOutput");
+        .thenReturn(MOCK_LONG_REPORT_OUTPUT);
     when(mockMarketCapSummaryReport.generateReport(any(ParsedFile.class)))
-        .thenReturn("marketCapSummaryReportOutput");
+        .thenReturn(MOCK_MARKET_CAP_SUMMARY_REPORT_OUTPUT);
 
     processFile = new ProcessFile();
     processFile.setFileParser(mockFileParser);
     processFile.setReportGenerator1(mockLongReport);
     processFile.setReportGenerator2(mockMarketCapSummaryReport);
-
   }
 
   @Test
   public void runShouldRunWithoutError() {
-    processFile.setFilename("src/test/resources/lse-companies-with-no-mkt-cap.tsv");
-    processFile.process();
+    processFile.setFilename("anything");
+    String result = processFile.process();
     verify(mockLongReport).generateReport(parsedFile);
-
+    assertTrue(result.contains(MOCK_LONG_REPORT_OUTPUT));
+    assertTrue(result.contains(MOCK_MARKET_CAP_SUMMARY_REPORT_OUTPUT));
   }
+
 }
