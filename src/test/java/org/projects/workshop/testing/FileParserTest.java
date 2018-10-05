@@ -5,12 +5,17 @@ import static org.junit.Assert.*;
 import java.util.List;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.projects.workshop.testing.model.ParsedFile;
 
 public class FileParserTest {
 
   private FileParser fileParser;
+
+  @Rule
+  public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
@@ -41,6 +46,18 @@ public class FileParserTest {
       }
     }
     assertTrue(rows.get(3).get(1).equals("ENTERTAINMENT ONE LTD."));
+  }
+
+  @Test
+  public void runShouldThrowExceptionIfEmptyFile() {
+    thrown.expect(RuntimeException.class);
+    thrown.expectMessage("no first line!");
+    fileParser.parseFile("src/test/resources/lse-companies-empty-file.tsv");
+  }
+
+  @Test(expected = RuntimeException.class)
+  public void runShouldThrowExceptionIfNoFile() {
+    fileParser.parseFile("no-file");
   }
 
 }
