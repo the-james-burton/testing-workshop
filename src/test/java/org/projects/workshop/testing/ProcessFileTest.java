@@ -5,9 +5,7 @@ import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
 import org.junit.Before;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.projects.workshop.testing.model.ParsedFile;
@@ -18,9 +16,6 @@ public class ProcessFileTest {
   private static final String MOCK_MARKET_CAP_SUMMARY_REPORT_OUTPUT = "marketCapSummaryReportOutput";
 
   private static final String MOCK_LONG_REPORT_OUTPUT = "longReportOutput";
-
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
 
   private ProcessFile processFile;
 
