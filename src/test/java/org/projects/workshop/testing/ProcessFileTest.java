@@ -54,7 +54,7 @@ public class ProcessFileTest {
   }
 
   @Test
-  public void runShouldRunWithoutError() {
+  public void processShouldContainBothReports() {
     processFile.setFilename("anything");
     String result = processFile.process();
     verify(mockLongReport).generateReport(parsedFile);
