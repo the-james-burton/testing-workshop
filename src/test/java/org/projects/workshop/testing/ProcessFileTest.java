@@ -27,7 +27,7 @@ public class ProcessFileTest {
   }
 
   @Test
-  public void runShouldRunWithoutError() {
+  public void processShouldRunWithoutError() {
     processFile.setFilename("src/test/resources/lse-companies-with-no-mkt-cap.tsv");
     processFile.process();
   }
