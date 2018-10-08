@@ -4,7 +4,7 @@
 
 ## The Situation
 
-Great work, you've done your first proper mocking! However, we are still using the real file parser so we've not completely isolated the testing yet.
+You have moved the tests to the right place. This is important to ensure that there are no external dependencies when doing mocking. However, we're not finished mocking the dependencies in our `ProcessFileTest` class as it still uses a real `FileParser` implementation.
 
 ## Your Mission
 
