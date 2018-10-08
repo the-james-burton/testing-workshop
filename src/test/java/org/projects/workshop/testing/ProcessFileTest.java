@@ -1,6 +1,6 @@
 package org.projects.workshop.testing;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.*;
 import static org.mockito.Mockito.*;
 
@@ -54,8 +54,7 @@ public class ProcessFileTest {
     String result = processFile.process();
     verify(mockLongReport).generateReport(parsedFile);
     verify(mockMarketCapSummaryReport).generateReport(parsedFile);
-    assertTrue(result.contains(MOCK_LONG_REPORT_OUTPUT));
-    assertTrue(result.contains(MOCK_MARKET_CAP_SUMMARY_REPORT_OUTPUT));
+    assertThat(result).contains(MOCK_LONG_REPORT_OUTPUT, MOCK_MARKET_CAP_SUMMARY_REPORT_OUTPUT);
   }
 
 }

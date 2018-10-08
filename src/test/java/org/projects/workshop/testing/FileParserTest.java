@@ -1,7 +1,6 @@
 package org.projects.workshop.testing;
 
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 import java.util.List;
 
@@ -27,19 +26,21 @@ public class FileParserTest {
   public void parseFileShouldExtractHeadersAndRows() {
     ParsedFile parsedFile = fileParser.parseFile("src/test/resources/lse-companies-with-no-mkt-cap.tsv");
 
-    assertTrue(parsedFile != null);
+    assertThat(parsedFile).isNotNull();
 
     List<String> headers = parsedFile.getHeaders();
-    assertThat(headers).isNotNull();
-    assertThat(headers).hasSize(9);
-    assertThat(headers).allSatisfy(header -> assertThat(header).isNotNull());
-    assertThat(headers).element(4).isEqualTo("Country of Incorporation");
+    assertThat(headers)
+        .isNotNull()
+        .hasSize(9)
+        .allSatisfy(header -> assertThat(header).isNotNull())
+        .element(4).isEqualTo("Country of Incorporation");
 
     List<List<String>> rows = parsedFile.getRows();
-    assertThat(parsedFile.getRows()).isNotNull();
-    assertThat(parsedFile.getRows()).hasSize(7);
-    assertThat(parsedFile.getRows()).allSatisfy(row -> assertThat(row).allSatisfy(item -> assertThat(item).isNotNull()));
-    assertThat(rows).element(3).satisfies(row -> assertThat(row).element(1).isEqualTo("ENTERTAINMENT ONE LTD."));
+    assertThat(rows)
+        .isNotNull()
+        .hasSize(7)
+        .allSatisfy(row -> assertThat(row).allSatisfy(item -> assertThat(item).isNotNull()))
+        .element(3).satisfies(row -> assertThat(row).element(1).isEqualTo("ENTERTAINMENT ONE LTD."));
   }
 
   @Test
