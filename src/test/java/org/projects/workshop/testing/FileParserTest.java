@@ -1,5 +1,6 @@
 package org.projects.workshop.testing;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.Assert.*;
 
 import java.util.List;
@@ -29,23 +30,16 @@ public class FileParserTest {
     assertTrue(parsedFile != null);
 
     List<String> headers = parsedFile.getHeaders();
-    assertTrue(headers != null);
-    assertTrue(headers.size() == 9);
-    for (String header : headers) {
-      assertTrue(header != null);
-    }
-    assertTrue(headers.get(4).equals("Country of Incorporation"));
+    assertThat(headers).isNotNull();
+    assertThat(headers).hasSize(9);
+    assertThat(headers).allSatisfy(header -> assertThat(header).isNotNull());
+    assertThat(headers).element(4).isEqualTo("Country of Incorporation");
 
     List<List<String>> rows = parsedFile.getRows();
-    assertTrue(parsedFile.getRows() != null);
-    assertTrue(parsedFile.getRows().size() == 7);
-    for (List<String> row : parsedFile.getRows()) {
-      assertTrue(row.size() == 9);
-      for (String item : row) {
-        assertTrue(item != null);
-      }
-    }
-    assertTrue(rows.get(3).get(1).equals("ENTERTAINMENT ONE LTD."));
+    assertThat(parsedFile.getRows()).isNotNull();
+    assertThat(parsedFile.getRows()).hasSize(7);
+    assertThat(parsedFile.getRows()).allSatisfy(row -> assertThat(row).allSatisfy(item -> assertThat(item).isNotNull()));
+    assertThat(rows).element(3).satisfies(row -> assertThat(row).element(1).isEqualTo("ENTERTAINMENT ONE LTD."));
   }
 
   @Test

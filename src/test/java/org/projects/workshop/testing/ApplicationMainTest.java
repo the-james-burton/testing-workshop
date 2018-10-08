@@ -1,6 +1,6 @@
 package org.projects.workshop.testing;
 
-import static org.junit.Assert.*;
+import static org.assertj.core.api.Assertions.*;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -20,12 +20,13 @@ public class ApplicationMainTest {
   @Test
   public void mainShouldRunWithoutError() {
     ApplicationMain.main("");
-    assertTrue(out.size() > 0);
+    assertThat(out.size()).isGreaterThan(0);
     String result = out.toString();
-    assertTrue(result.length() > 0);
-    assertTrue(result.contains("---------------------------"));
-    assertTrue(result.contains("              Europe : £ 102434.38m"));
-    assertTrue(result.contains("Company Name:ENTERTAINMENT ONE LTD."));
-    assertTrue(result.length() == 20278);
+    assertThat(result.length()).isGreaterThan(0);
+    assertThat(result).contains(
+        "---------------------------",
+        "              Europe : £ 102434.38m",
+        "Company Name:ENTERTAINMENT ONE LTD.");
+    assertThat(result).hasSize(20278);
   }
 }
