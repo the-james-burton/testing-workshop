@@ -25,4 +25,5 @@ A series of exercises to illustrate testing. This workshop will take you on a jo
  chapter13 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter13)](https://travis-ci.org/the-james-burton/testing-workshop)
  chapter14 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter14)](https://travis-ci.org/the-james-burton/testing-workshop)
  chapter15 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter15)](https://travis-ci.org/the-james-burton/testing-workshop)
+ chapter16 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter16)](https://travis-ci.org/the-james-burton/testing-workshop)
 
