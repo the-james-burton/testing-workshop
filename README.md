@@ -8,7 +8,7 @@ Great, you've put AssertJ in and now we're sure that you'll never use assertTrue
 
 ## Your Mission
 
-New requirement! A senior business stakeholder has asked for a new report. She would like to know how many companies are in each market. No clever formatting is required, just a simple summary of each market and how many companies are in it, one market per row. To implement this requirement, you are going to do a 'test driven development' cycle.
+New requirement! A senior business stakeholder has asked for a new report. She would like to know how many companies are in each market. No clever formatting is required, just a simple list of markets and how many companies are in them, one market per row. To implement this requirement, you are going to do a 'test driven development' cycle.
 
 0. Create a class for your new test implementing your existing `Report` interface. Your new generateReport() method should simply return an empty string for now. We will come back and write the implementation later.
 
