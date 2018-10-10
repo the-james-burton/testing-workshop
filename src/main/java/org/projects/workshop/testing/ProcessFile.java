@@ -7,18 +7,13 @@ import org.projects.workshop.testing.reports.Report;
 
 public class ProcessFile {
 
-  private String filename;
-
   private FileParser fileParser;
 
   private Report reportGenerator1;
 
   private Report reportGenerator2;
 
-  public ProcessFile() {
-  }
-
-  public String process() {
+  public String process(String filename) {
     ParsedFile parsedFile = fileParser.parseFile(filename);
     StringJoiner joiner = new StringJoiner("\n");
 
@@ -29,10 +24,6 @@ public class ProcessFile {
     joiner.add(report2);
 
     return joiner.toString();
-  }
-
-  public void setFilename(String filename) {
-    this.filename = filename;
   }
 
   public void setFileParser(FileParser fileParser) {
