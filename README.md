@@ -8,22 +8,22 @@ A series of exercises to illustrate testing. This workshop will take you on a jo
 
 ## Exercise Build Status
 
- branch | status
---- | ---
- chapter1 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter1)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter2 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter2)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter3 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter3)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter4 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter4)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter5 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter5)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter6 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter6)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter7 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter7)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter8 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter8)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter9 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter9)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter10 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter10)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter11 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter11)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter12 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter12)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter13 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter13)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter14 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter14)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter15 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter15)](https://travis-ci.org/the-james-burton/testing-workshop)
- chapter16 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter16)](https://travis-ci.org/the-james-burton/testing-workshop)
+ branch | status | description
+--- | --- | ---
+ chapter1 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter1)](https://travis-ci.org/the-james-burton/testing-workshop) | Write your first test and execute it locally. Learn how to do a PR.
+ chapter2 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter2)](https://travis-ci.org/the-james-burton/testing-workshop) | Get your CI system to run your test, does it work? If not, fix it.
+ chapter3 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter3)](https://travis-ci.org/the-james-burton/testing-workshop) | Measure and increase code coverage.
+ chapter4 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter4)](https://travis-ci.org/the-james-burton/testing-workshop) | Extract code from main() method.
+ chapter5 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter5)](https://travis-ci.org/the-james-burton/testing-workshop) | Extract parsing functionality.
+ chapter6 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter6)](https://travis-ci.org/the-james-burton/testing-workshop) | Write first unit tests.
+ chapter7 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter7)](https://travis-ci.org/the-james-burton/testing-workshop) | Extract report functionality using interfaces.
+ chapter8 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter8)](https://travis-ci.org/the-james-burton/testing-workshop) | Write unit tests for reports.
+ chapter9 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter9)](https://travis-ci.org/the-james-burton/testing-workshop) | Asserting on System.out.
+ chapter10 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter10)](https://travis-ci.org/the-james-burton/testing-workshop) | Simple dependency injection.
+ chapter11 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter11)](https://travis-ci.org/the-james-burton/testing-workshop) | Mocking dependencies in the unit tests.
+ chapter12 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter12)](https://travis-ci.org/the-james-burton/testing-workshop) | Assert on only the functionality of the class under test.
+ chapter13 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter13)](https://travis-ci.org/the-james-burton/testing-workshop) | Complete the mocking for a fully isolated test.
+ chapter14 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter14)](https://travis-ci.org/the-james-burton/testing-workshop) | Using AssertJ for fluent assertions.
+ chapter15 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter15)](https://travis-ci.org/the-james-burton/testing-workshop) | Basic test-driven development by implementing a new requirement
+ chapter16 | [![Build Status](https://api.travis-ci.org/the-james-burton/testing-workshop.svg?branch=chapter16)](https://travis-ci.org/the-james-burton/testing-workshop) | The final solution
 
