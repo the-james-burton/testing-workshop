@@ -50,8 +50,7 @@ public class ProcessFileTest {
 
   @Test
   public void processShouldContainBothReports() {
-    processFile.setFilename("anything");
-    String result = processFile.process();
+    String result = processFile.process("anything");
     verify(mockLongReport).generateReport(parsedFile);
     verify(mockMarketCapSummaryReport).generateReport(parsedFile);
     assertTrue(result.contains(MOCK_LONG_REPORT_OUTPUT));
