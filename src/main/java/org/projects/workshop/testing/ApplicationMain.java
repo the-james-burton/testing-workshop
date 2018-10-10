@@ -4,7 +4,7 @@ public class ApplicationMain {
 
   public static void main(final String... args) {
     ProcessFile processFile = new ProcessFile();
-    String result = processFile.process("src/main/resources/lse-companies.tsv");
+    String result = processFile.process(args[0]);
     System.out.println(result);
   }
 
