@@ -21,19 +21,16 @@ public class ProcessFileTest {
   public void processShouldThrowExceptionIfEmptyFile() {
     thrown.expect(RuntimeException.class);
     thrown.expectMessage("no first line!");
-    processFile.setFilename("src/test/resources/lse-companies-empty-file.tsv");
-    processFile.process();
+    processFile.process("src/test/resources/lse-companies-empty-file.tsv");
   }
 
   @Test(expected = RuntimeException.class)
   public void processShouldThrowExceptionIfNoFile() {
-    processFile.setFilename("no-file");
-    processFile.process();
+    processFile.process("no-file");
   }
 
   @Test
   public void processShouldRunWithoutError() {
-    processFile.setFilename("src/test/resources/lse-companies-with-no-mkt-cap.tsv");
-    processFile.process();
+    processFile.process("src/test/resources/lse-companies-with-no-mkt-cap.tsv");
   }
 }
