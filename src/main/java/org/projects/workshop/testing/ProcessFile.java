@@ -13,12 +13,7 @@ import org.projects.workshop.testing.model.ParsedFile;
 
 public class ProcessFile {
 
-  private String filename;
-
-  public ProcessFile() {
-  }
-
-  public String process() {
+  public String process(String filename) {
     FileParser fileParser = new FileParser();
     ParsedFile parsedFile = fileParser.parseFile(filename);
 
@@ -57,11 +52,6 @@ public class ProcessFile {
     }
 
     return joiner.toString();
-
-  }
-
-  public void setFilename(String filename) {
-    this.filename = filename;
   }
 
 }
