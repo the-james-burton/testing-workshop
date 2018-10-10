@@ -16,12 +16,7 @@ import java.util.StringJoiner;
 
 public class ProcessFile {
 
-  private String filename;
-
-  public ProcessFile() {
-  }
-
-  public String process() {
+  public String process(String filename) {
     File file = new File(filename);
     Scanner input = null;
     try {
@@ -89,10 +84,6 @@ public class ProcessFile {
     }
 
     return joiner.toString();
-  }
-
-  public void setFilename(String filename) {
-    this.filename = filename;
   }
 
 }
