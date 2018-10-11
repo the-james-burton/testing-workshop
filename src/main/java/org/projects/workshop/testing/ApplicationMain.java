@@ -10,8 +10,7 @@ public class ApplicationMain {
     processFile.setFileParser(new FileParser());
     processFile.setReportGenerator1(new LongReport());
     processFile.setReportGenerator2(new MarketCapSummaryReport());
-    processFile.setFilename("src/main/resources/lse-companies.tsv");
-    String result = processFile.process();
+    String result = processFile.process(args[0]);
     System.out.println(result);
   }
 
