@@ -19,13 +19,12 @@ public class ApplicationMainTest {
 
   @Test
   public void mainShouldRunWithoutError() {
-    ApplicationMain.main("");
+    ApplicationMain.main("src/test/resources/lse-companies-with-no-mkt-cap.tsv");
     assertTrue(out.size() > 0);
     String result = out.toString();
     assertTrue(result.length() > 0);
     assertTrue(result.contains("---------------------------"));
-    assertTrue(result.contains("              Europe : £ 102434.38m"));
+    assertTrue(result.contains("              Europe : £   2330.06m"));
     assertTrue(result.contains("Company Name:ENTERTAINMENT ONE LTD."));
-    assertTrue(result.length() == 20278);
   }
 }
